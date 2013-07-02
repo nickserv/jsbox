@@ -5,4 +5,4 @@ require './app'
 use Rack::Deflater
 
 # Run app
-run App
+run Sinatra::Application
