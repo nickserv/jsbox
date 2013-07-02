@@ -1,4 +1,5 @@
 require 'sinatra'
+require './helpers'
 
 Encoding.default_external = 'utf-8'
 

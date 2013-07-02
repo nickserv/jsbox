@@ -16,5 +16,10 @@
   <!-- footer -->
   <footer>&copy; 2013 Nicolas McCurdy</footer>
 
+  <!-- scripts -->
+  <% library_urls.each do |url| %>
+    <script src="<%= url %>"></script>
+  <% end %>
+
 </body>
 </html>
