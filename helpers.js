@@ -1,6 +1,6 @@
 // helper functions
 
-var libraries = require('./libraries.json').libraries;
+var libraries = require('./data.json').libraries;
 
 exports.urlForLibrary = function (library, file, version) {
   return "//cdnjs.cloudflare.com/ajax/libs/" + library + "/" + version + "/" + file;
