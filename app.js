@@ -7,7 +7,6 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-var libraries = require('./libraries.json').libraries;
 
 var app = express();
 
@@ -29,16 +28,6 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-
-// helper functions
-function urlForLibrary(library, file, version) {
-  return "//cdnjs.cloudflare.com/ajax/libs/" + library + "/" + version + "/" + file;
-}
-function libraryUrls() {
-  return libraries.map(function (data) {
-    return urlForLibrary(data.library, data.file, data.version);
-  });
-}
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

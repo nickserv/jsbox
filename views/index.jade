@@ -11,8 +11,5 @@ block content
 
   footer &copy; 2013 Nicolas McCurdy
 
-  //
-    TODO: Fix this so it properly iterates over all library URLs
-    <% library_urls.each do |url| %>
-      <script src="<%= url %>"></script>
-    <% end %>
+  each url in libraryUrls()
+    script(src=url)
