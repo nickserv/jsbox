@@ -2,4 +2,17 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p.
+    A simple tool for experimenting with JS libraries in your web console.
+  p.
+    Development versions of jQuery and Underscore are included in this page,
+    with no other JavaScript files. To use your web console with these
+    libraries, simply open it up on this page and hack away.
+
+  footer &copy; 2013 Nicolas McCurdy
+
+  //
+    TODO: Fix this so it properly iterates over all library URLs
+    <% library_urls.each do |url| %>
+      <script src="<%= url %>"></script>
+    <% end %>
