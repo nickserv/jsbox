@@ -1,8 +1,0 @@
--
-  library: jquery
-  file:    jquery.js
-  version: 2.0.2
--
-  library: underscore.js
-  file:    underscore.js
-  version: 1.4.4
