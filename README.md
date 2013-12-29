@@ -1,4 +1,4 @@
-# JS Box
+# [JS Box](http://jsbox.herokuapp.com/)
 A simple tool for experimenting with JS libraries in your web console.
 
 ## Installation
