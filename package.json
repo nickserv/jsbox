@@ -2,6 +2,15 @@
   "name": "jsbox",
   "version": "0.1.0",
   "private": true,
+  "description": "A simple tool for experimenting with JS libraries in your web console.",
+  "homepage": "https://github.com/thenickperson/jsbox",
+  "bugs": "https://github.com/thenickperson/jsbox/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thenickperson/jsbox.git"
+  },
+  "license": "MIT",
+  "author": "Nicolas McCurdy <thenickperson@gmail.com> (http://thenickperson.com/)",
   "engines": {
     "node": "0.10.x"
   },
