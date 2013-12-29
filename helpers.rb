@@ -1,3 +1,5 @@
+require 'yaml'
+
 def url_for_library library, file, version
     "//cdnjs.cloudflare.com/ajax/libs/#{library}/#{version}/#{file}"
 end
