@@ -8,16 +8,15 @@ exports.urlForLibrary = function (library, file, version) {
 
 exports.libraryUrls = function (callback) {
   http.get("http://cdnjs.com/packages.json", function (res) {
+    console.log("Downloading the cdnjs package list... (this might take a minute)");
     var data = "";
-    var chunkNumber = 1;
 
     res.on("data", function (chunk) {
       data += chunk;
-      console.log("chunk " + chunkNumber++);
     });
 
     res.on("end", function () {
-      console.log("done");
+      console.log("Done!");
       var libraries = JSON.parse(data).packages;
       var result = libraries.map(function (data) {
         return exports.urlForLibrary(data.name, data.filename, data.version);
