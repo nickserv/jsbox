@@ -6,8 +6,10 @@
 var helpers = require('../helpers');
 
 exports.index = function(req, res){
-  res.render('index', {
-    title: 'JS Box',
-    libraryUrls: helpers.libraryUrls
+  helpers.libraryUrls(function (libraryUrls) {
+    res.render('index', {
+      title: 'JS Box',
+      libraryUrls: libraryUrls
+    });
   });
 };

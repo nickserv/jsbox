@@ -13,5 +13,8 @@ block content
     &copy; 2013 
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
-  each url in libraryUrls()
-    script(src=url)
+  h2 All libraries
+  ul
+    each url in libraryUrls
+      li
+        a(href=url)= url
