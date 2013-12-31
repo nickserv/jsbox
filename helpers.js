@@ -6,7 +6,7 @@ exports.urlForLibrary = function (library, file, version) {
   return "//cdnjs.cloudflare.com/ajax/libs/" + library + "/" + version + "/" + file;
 };
 
-exports.libraryUrls = function (callback) {
+exports.getPackageInfo = function (callback) {
   http.get("http://cdnjs.com/packages.json", function (res) {
     console.log("Downloading the cdnjs package list... (this might take a minute)");
     var data = "";
@@ -17,11 +17,17 @@ exports.libraryUrls = function (callback) {
 
     res.on("end", function () {
       console.log("Done!");
-      var libraries = JSON.parse(data).packages;
-      var result = libraries.map(function (data) {
-        return exports.urlForLibrary(data.name, data.filename, data.version);
-      });
-      callback(result);
+      callback(data);
     });
+  });
+};
+
+exports.libraryUrls = function (callback) {
+  exports.getPackageInfo(function (data) {
+    var libraries = JSON.parse(data).packages;
+    var result = libraries.map(function (data) {
+      return exports.urlForLibrary(data.name, data.filename, data.version);
+    });
+    callback(result);
   });
 };
