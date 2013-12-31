@@ -1,33 +1,15 @@
 // helper functions
 
 var http = require("http");
+var packages = require("./tmp/packages.json").packages;
 
 exports.urlForLibrary = function (library, file, version) {
   return "//cdnjs.cloudflare.com/ajax/libs/" + library + "/" + version + "/" + file;
 };
 
-exports.getPackageInfo = function (callback) {
-  http.get("http://cdnjs.com/packages.json", function (res) {
-    console.log("Downloading the cdnjs package list... (this might take a minute)");
-    var data = "";
-
-    res.on("data", function (chunk) {
-      data += chunk;
-    });
-
-    res.on("end", function () {
-      console.log("Done!");
-      callback(data);
-    });
-  });
-};
-
 exports.getLibraryUrls = function (callback) {
-  exports.getPackageInfo(function (data) {
-    var libraries = JSON.parse(data).packages;
-    var result = libraries.map(function (data) {
-      return exports.urlForLibrary(data.name, data.filename, data.version);
-    });
-    callback(result);
+  var result = packages.map(function (data) {
+    return exports.urlForLibrary(data.name, data.filename, data.version);
   });
+  callback(result);
 };
