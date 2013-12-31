@@ -22,7 +22,7 @@ exports.getPackageInfo = function (callback) {
   });
 };
 
-exports.libraryUrls = function (callback) {
+exports.getLibraryUrls = function (callback) {
   exports.getPackageInfo(function (data) {
     var libraries = JSON.parse(data).packages;
     var result = libraries.map(function (data) {
