@@ -6,11 +6,9 @@
 var helpers = require('../helpers');
 
 exports.index = function(req, res){
-  helpers.getLibraryUrls(function (libraryUrls) {
-    res.render('index', {
-      title: 'JS Box',
-      libraryUrls: libraryUrls,
-      scriptUrl: req.param('scriptUrl')
-    });
+  res.render('index', {
+    title: 'JS Box',
+    libraryUrls: helpers.getLibraryUrls(),
+    scriptUrl: req.param('scriptUrl')
   });
 };
