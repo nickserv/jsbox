@@ -20,9 +20,10 @@ block content
     p none
 
   h2 All libraries
-  ul
-    each package in libraryUrls
-      li
-        a(href='?scriptUrl='+encodeURIComponent(package.url))= package.name
+  form
+    select(name='scriptUrl')
+      each package in libraryUrls
+        option(value=package.url)= package.name
+    input(type='submit', value='Load')
 
   script(src=scriptUrl)
