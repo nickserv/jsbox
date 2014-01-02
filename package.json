@@ -15,10 +15,12 @@
     "node": "0.10.x"
   },
   "scripts": {
+    "postinstall": "node_modules/.bin/bower install",
     "start": "sh start.sh"
   },
   "dependencies": {
     "express": "~3.4.7",
-    "jade": "~1.0.2"
+    "jade": "~1.0.2",
+    "bower": "~1.2.8"
   }
 }
