@@ -23,6 +23,6 @@ block content
   ul
     each package in libraryUrls
       li
-        a(href=package.url)= package.name
+        a(href='?scriptUrl='+encodeURIComponent(package.url))= package.name
 
   script(src=scriptUrl)
