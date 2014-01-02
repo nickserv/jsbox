@@ -1,0 +1,17 @@
+{
+  "name": "jsbox",
+  "version": "0.1.0",
+  "homepage": "https://github.com/thenickperson/jsbox",
+  "authors": [
+    "Nicolas McCurdy <thenickperson@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
