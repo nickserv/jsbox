@@ -9,7 +9,8 @@ exports.index = function(req, res){
   helpers.getLibraryUrls(function (libraryUrls) {
     res.render('index', {
       title: 'JS Box',
-      libraryUrls: libraryUrls
+      libraryUrls: libraryUrls,
+      scriptUrl: req.param('scriptUrl')
     });
   });
 };

@@ -13,8 +13,16 @@ block content
     &copy; 2013 
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
+  h2 Current library
+  if scriptUrl
+    a(href=scriptUrl)= scriptUrl
+  else
+    p none
+
   h2 All libraries
   ul
     each url in libraryUrls
       li
         a(href=url)= url
+
+  script(src=scriptUrl)
