@@ -22,6 +22,7 @@ block content
   h2 All libraries
   form
     select(name='scriptUrl')
+      option
       each package in libraryUrls
         option(value=package.url)= package.name
     input(type='submit', value='Load')
