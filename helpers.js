@@ -9,7 +9,10 @@ exports.urlForLibrary = function (library, file, version) {
 
 exports.getLibraryUrls = function (callback) {
   var result = packages.map(function (data) {
-    return exports.urlForLibrary(data.name, data.filename, data.version);
+    return {
+      name: data.name,
+      url: exports.urlForLibrary(data.name, data.filename, data.version)
+    }
   });
   callback(result);
 };

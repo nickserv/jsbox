@@ -21,8 +21,8 @@ block content
 
   h2 All libraries
   ul
-    each url in libraryUrls
+    each package in libraryUrls
       li
-        a(href=url)= url
+        a(href=package.url)= package.name
 
   script(src=scriptUrl)
