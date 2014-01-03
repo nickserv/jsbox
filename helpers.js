@@ -1,5 +1,6 @@
 // helper functions
 
+var _ = require("underscore");
 var libraries = require("./tmp/packages.json").packages;
 
 exports.getLibraries = function () {
@@ -11,6 +12,6 @@ exports.getLibraries = function () {
   });
 };
 
-exports.getActiveLibrary = function (data) {
-  return data ? JSON.parse(data) : undefined;
+exports.getActiveLibrary = function (name) {
+  return _.findWhere(exports.getLibraries(), { name: name });
 };

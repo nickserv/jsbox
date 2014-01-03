@@ -23,7 +23,7 @@ block content
     select(name='library')
       option
       each library in libraries
-        option(value=JSON.stringify(library))= library.name
+        option(value=library.name)= library.name
     input(type='submit', value='Load')
 
   if activeLibrary
