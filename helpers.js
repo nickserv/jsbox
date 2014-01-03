@@ -1,6 +1,5 @@
 // helper functions
 
-var http = require("http");
 var libraries = require("./tmp/packages.json").packages;
 
 exports.getLibraries = function () {
