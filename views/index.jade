@@ -14,7 +14,7 @@ block content
 
   h2 Current library
   if library
-    a(href=library)= library
+    a(href=library.url)= library.name
   else
     p none
 
@@ -23,7 +23,8 @@ block content
     select(name='library')
       option
       each library in libraries
-        option(value=library.url)= library.name
+        option(value=JSON.stringify(library))= library.name
     input(type='submit', value='Load')
 
-  script(src=library)
+  if library
+    script(src=library.url)
