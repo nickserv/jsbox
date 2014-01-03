@@ -22,8 +22,7 @@ block content
 
   h2 All libraries
   form
-    select(name='libraries', multiple, size=15)
-      option
+    select.chosen-select(name='libraries', multiple, size=15)
       each library in libraries
         option(value=library.name)= library.name
     input(type='submit', value='Load')
