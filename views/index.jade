@@ -23,8 +23,8 @@ block content
   form
     select(name='library')
       option
-      each package in libraryUrls
-        option(value=package.url)= package.name
+      each library in libraries
+        option(value=library.url)= library.name
     input(type='submit', value='Load')
 
   script(src=library)
