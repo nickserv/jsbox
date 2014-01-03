@@ -9,6 +9,6 @@ exports.index = function(req, res){
   res.render('index', {
     title: 'JS Box',
     libraries: helpers.getLibraries(),
-    activeLibrary: req.query.library ? JSON.parse(req.query.library) : undefined
+    activeLibrary: helpers.getActiveLibrary(req.query.library)
   });
 };

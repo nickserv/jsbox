@@ -11,3 +11,7 @@ exports.getLibraries = function () {
     }
   });
 };
+
+exports.getActiveLibrary = function (data) {
+  return data ? JSON.parse(data) : undefined;
+};
