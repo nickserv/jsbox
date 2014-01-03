@@ -14,17 +14,17 @@ block content
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
   h2 Current library
-  if scriptUrl
-    a(href=scriptUrl)= scriptUrl
+  if file
+    a(href=file)= file
   else
     p none
 
   h2 All libraries
   form
-    select(name='scriptUrl')
+    select(name='file')
       option
       each package in libraryUrls
         option(value=package.url)= package.name
     input(type='submit', value='Load')
 
-  script(src=scriptUrl)
+  script(src=file)
