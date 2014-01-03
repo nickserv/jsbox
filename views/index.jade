@@ -13,8 +13,8 @@ block content
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
   h2 Current library
-  if library
-    a(href=library.url)= library.name
+  if activeLibrary
+    a(href=activeLibrary.url)= activeLibrary.name
   else
     p none
 
@@ -26,5 +26,5 @@ block content
         option(value=JSON.stringify(library))= library.name
     input(type='submit', value='Load')
 
-  if library
-    script(src=library.url)
+  if activeLibrary
+    script(src=activeLibrary.url)
