@@ -12,6 +12,15 @@ exports.getLibraries = function () {
   });
 };
 
-exports.getActiveLibrary = function (name) {
-  return _.findWhere(exports.getLibraries(), { name: name });
+exports.getActiveLibraries = function (names) {
+  switch(typeof names) {
+  // remember, arrays are objects!
+  case "object":
+    return _.filter(exports.getLibraries(), function (data) {
+      return _.contains(names, data.name);
+    });
+
+  case "string":
+    return new Array(_.findWhere(exports.getLibraries(), { name: names }));
+  }
 };

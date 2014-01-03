@@ -9,6 +9,6 @@ exports.index = function(req, res){
   res.render('index', {
     title: 'JS Box',
     libraries: helpers.getLibraries(),
-    activeLibrary: helpers.getActiveLibrary(req.query.library)
+    activeLibraries: helpers.getActiveLibraries(req.query.libraries)
   });
 };
