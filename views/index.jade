@@ -2,29 +2,32 @@ extends layout
 
 block content
   h1= title
-  p.
-    A simple tool for experimenting with JS libraries in your web console.
+  p A simple tool for experimenting with JS libraries in your web console.
   p.
     Development versions of jQuery and Underscore are included in this page,
     with no other JavaScript files. To use your web console with these
     libraries, simply open it up on this page and hack away.
 
   footer
-    &copy; 2013 
+    | &copy; 2013 
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
-  h2 Current library
-  if scriptUrl
-    a(href=scriptUrl)= scriptUrl
+  h2 Current libraries
+  if activeLibraries
+    ul: each activeLibrary in activeLibraries
+      if activeLibrary
+        li: a(href=activeLibrary.url)= activeLibrary.name
   else
     p none
 
   h2 All libraries
   form
-    select(name='scriptUrl')
-      option
-      each package in libraryUrls
-        option(value=package.url)= package.name
+    select.chosen-select(name='libraries', multiple, size=15)
+      each library in libraries
+        option(value=library.name)= library.name
     input(type='submit', value='Load')
 
-  script(src=scriptUrl)
+  if activeLibraries
+    each activeLibrary in activeLibraries
+      if activeLibrary
+        script(src=activeLibrary.url)

@@ -10,3 +10,8 @@ npm install
 npm start
 # Visit localhost:3000.
 ```
+
+## Built with
+- [Node.js](http://nodejs.org/)
+- [Express](http://expressjs.com/)
+- [cdnjs](http://cdnjs.com/)
