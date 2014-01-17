@@ -8,7 +8,7 @@ exports.getLibraries = function () {
     return {
       name: data.name,
       url: "//cdnjs.cloudflare.com/ajax/libs/" + data.name + "/" + data.version + "/" + data.filename
-    }
+    };
   });
 };
 
