@@ -5,12 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // Task configuration.
     jshint: {
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
-      },
+      files: ['*.js', 'routes/**/*.js'],
       options: {
         jshintrc: true
       }
