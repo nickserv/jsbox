@@ -5,20 +5,14 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // Task configuration.
     jshint: {
-      files: ['*.js', 'routes/**/*.js'],
+      src: ['*.js', 'routes/**/*.js'],
       options: {
         jshintrc: true
       }
     },
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test']
-      }
+      files: '<%= jshint.src %>',
+      tasks: ['jshint']
     }
   });
 
