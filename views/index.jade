@@ -24,7 +24,7 @@ block content
   form
     select.chosen-select(name='libraries', multiple, size=15)
       each library in libraries
-        option(value=library.name)= library.name
+        option(value=library.name, selected=isActiveLibrary(library, activeLibraries))= library.name
     input(type='submit', value='Load')
 
   if activeLibraries
