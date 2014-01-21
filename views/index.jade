@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  // App information
   h1= title
   p A simple tool for experimenting with JS libraries in your web console.
   p.
@@ -12,6 +13,7 @@ block content
     | &copy; 2014 
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
+  // List of active libraries
   h2 Current libraries
   if activeLibraries
     ul: each activeLibrary in activeLibraries
@@ -20,6 +22,7 @@ block content
   else
     p none
 
+  // List of all known libraries
   h2 All libraries
   form
     select.chosen-select(name='libraries', multiple, size=15)
@@ -27,6 +30,7 @@ block content
         option(value=library.name, selected=isActiveLibrary(library, activeLibraries))= library.name
     input(type='submit', value='Load')
 
+  // Load the JavaScript files for all active libraries
   if activeLibraries
     each activeLibrary in activeLibraries
       if activeLibrary

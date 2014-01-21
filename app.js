@@ -11,7 +11,7 @@ var path = require('path');
 
 var app = express();
 
-// all environments
+// All environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -23,14 +23,16 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
+// Development only
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// Routes
 app.get('/', routes.index);
 app.get('/api.json', api.index);
 
+// Server
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

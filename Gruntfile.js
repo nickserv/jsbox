@@ -5,6 +5,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     // Task configuration.
     jshint: {
+      // See .jshintrc
       src: ['*.js', 'routes/**/*.js'],
       options: {
         jshintrc: true
