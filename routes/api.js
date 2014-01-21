@@ -3,7 +3,7 @@
  * GET API results.
  */
 
-var helpers = require('../helpers');
+var library = require('../library');
 
 // Provides a simple API for retrieving library information at `/api.json`. The
 // library JSON is based on the data provided by cdnjs, but JS Box removes most
@@ -14,6 +14,6 @@ var helpers = require('../helpers');
 // `libraries` parameter are returned. Libraries that do not exist are ignored,
 // and any number of libraries may be specified.
 exports.index = function(req, res){
-  var activeLibraries = helpers.getActiveLibraries(req.query.libraries);
-  res.send(activeLibraries || helpers.getLibraries());
+  var activeLibraries = library.getActiveLibraries(req.query.libraries);
+  res.send(activeLibraries || library.getLibraries());
 };

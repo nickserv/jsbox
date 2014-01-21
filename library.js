@@ -1,4 +1,4 @@
-// Helper functions
+// Library helper functions
 
 var _ = require("underscore");
 // The JSON data provided by cdnjs
