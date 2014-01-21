@@ -1,4 +1,6 @@
 # [JS Box](http://jsbox.herokuapp.com/)
+[![Dependency Status](https://gemnasium.com/thenickperson/jsbox.png)](https://gemnasium.com/thenickperson/jsbox)
+
 A simple tool for experimenting with JS libraries in your web console.
 
 ## Installation
