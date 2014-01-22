@@ -18,13 +18,11 @@ block content
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
   // List of active libraries
-  h2 Active libraries
   if activeLibraries
+    h2 Active libraries
     ul: each activeLibrary in activeLibraries
       if activeLibrary
         li: a(href=activeLibrary.url)= activeLibrary.name
-  else
-    p none
 
   // List of all known libraries
   h2 Choose libraries to load
