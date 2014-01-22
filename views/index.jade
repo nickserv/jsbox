@@ -18,7 +18,7 @@ block content
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
   // List of active libraries
-  h2 Current libraries
+  h2 Active libraries
   if activeLibraries
     ul: each activeLibrary in activeLibraries
       if activeLibrary
@@ -27,7 +27,7 @@ block content
     p none
 
   // List of all known libraries
-  h2 All libraries
+  h2 Choose libraries to load
   form
     select.chosen-select(name='libraries', multiple, size=15)
       each library in libraries
