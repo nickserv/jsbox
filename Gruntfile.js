@@ -4,6 +4,9 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     // Task configuration.
+    csslint: {
+      src: ['public/**/*.css'],
+    },
     docco: {
       src: ['*.js', 'routes/**/*.js']
     },
@@ -21,6 +24,7 @@ module.exports = function(grunt) {
   });
 
   // These plugins provide necessary tasks.
+  grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-docco');
