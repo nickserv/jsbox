@@ -12,7 +12,7 @@
   "license": "MIT",
   "author": "Nicolas McCurdy <thenickperson@gmail.com> (http://thenickperson.com/)",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": "0.10.x"
   },
   "scripts": {
     "start": "sh start.sh"
