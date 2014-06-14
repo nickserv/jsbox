@@ -5,7 +5,6 @@
 
 var express = require('express');
 var routes = require('./routes');
-var api = require('./routes/api');
 var http = require('http');
 var path = require('path');
 
@@ -19,7 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', routes.index);
-app.get('/api.json', api.index);
 
 // Server
 http.createServer(app).listen(app.get('port'), function(){
