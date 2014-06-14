@@ -27,4 +27,4 @@ block content
     select.chosen-select(name='libraries', multiple)
       each library in libraries
         option(value=library.name, selected=isActiveLibrary(library, activeLibraries))= library.name
-    input(type='submit', value='Create a box with these libraries')
+    input.pure-button.pure-button-primary(type='submit', value='Create a box with these libraries')
