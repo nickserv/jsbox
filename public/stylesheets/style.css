@@ -1,3 +1,4 @@
-body {
-  padding: 50px;
+.container {
+  margin: 0px auto;
+  max-width: 500px;
 }
