@@ -1,6 +1,10 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  margin: 0px auto;
+  max-width: 500px;
 }
 
 a {
