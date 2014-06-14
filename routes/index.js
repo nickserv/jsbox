@@ -1,14 +1,13 @@
-
-/*
- * GET home page.
- */
+var express = require('express');
+var router = express.Router();
 
 var _ = require('underscore');
 var library = require('../library');
 
+/* GET home page. */
 // Lets users choose libraries to load. The page also loads the appropriate
 // JavaScript libraries (by name) through the `libraries` parameter.
-exports.index = function(req, res){
+router.get('/', function(req, res) {
   library.getLibraries(function (libraries) {
     res.render('index', {
       title: 'JS Box',
@@ -24,4 +23,6 @@ exports.index = function(req, res){
       }
     });
   });
-};
+});
+
+module.exports = router;
