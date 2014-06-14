@@ -13,23 +13,18 @@ block content
   // App information
   h1= title
   p A simple tool for experimenting with JS libraries in your web console.
-  p.
-    You may use the field below to pick JavaScript libraries to load. Once you
-    press "Load", the page will be reloaded with the libraries of your choice
-    included. To use your web console with these libraries, simply open it up on
-    this page and hack away.
-  p.
-    Please note that jQuery and Chosen will be loaded at all times, as JS Box
-    uses them internally.
 
   footer
     | &copy; 2014 
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
   // List of all known libraries
-  h2 Choose libraries to load
+  h2 Create a new box
+  p.
+    You may use the field below to pick JavaScript libraries to experiment with
+    in your new box.
   form(action='/box')
     select.chosen-select(name='libraries', multiple, size=15)
       each library in libraries
         option(value=library.name, selected=isActiveLibrary(library, activeLibraries))= library.name
-    input(type='submit', value='Load')
+    input(type='submit', value='Create a box with these libraries')

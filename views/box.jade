@@ -8,9 +8,20 @@ block dependencies
         script(src=activeLibrary.latest)
   
 block content
+  h1
+    | #{title}: 
+    small Your box
+
+  h2 Included libraries
   // List of active libraries
+  p The following libraries are currently incuded on this page.
+  p To experiment with them, simply open your web console and hack away.
   if activeLibraries
-    h2 Active libraries
     ul: each activeLibrary in activeLibraries
       if activeLibrary
         li: a(href=activeLibrary.latest)= activeLibrary.name
+
+  h2 Actions
+  ul
+    li
+      a(href='/') Create a new box
