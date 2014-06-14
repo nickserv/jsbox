@@ -22,7 +22,7 @@ block content
     h2 Active libraries
     ul: each activeLibrary in activeLibraries
       if activeLibrary
-        li: a(href=activeLibrary.url)= activeLibrary.name
+        li: a(href=activeLibrary.latest)= activeLibrary.name
 
   // List of all known libraries
   h2 Choose libraries to load
@@ -36,4 +36,4 @@ block content
   if activeLibraries
     each activeLibrary in activeLibraries
       if activeLibrary
-        script(src=activeLibrary.url)
+        script(src=activeLibrary.latest)

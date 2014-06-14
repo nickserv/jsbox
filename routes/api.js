@@ -14,6 +14,8 @@ var library = require('../library');
 // `libraries` parameter are returned. Libraries that do not exist are ignored,
 // and any number of libraries may be specified.
 exports.index = function(req, res){
-  var activeLibraries = library.getActiveLibraries(req.query.libraries);
-  res.send(activeLibraries || library.getLibraries());
+  library.getLibraries(function (libraries) {
+    var activeLibraries = library.getActiveLibraries(req.query.libraries);
+    res.send(activeLibraries || libraries);
+  });
 };
