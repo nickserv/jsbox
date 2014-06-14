@@ -26,23 +26,10 @@ block content
     | &copy; 2014 
     a(href='http://thenickperson.com/') Nicolas McCurdy
 
-  // List of active libraries
-  if activeLibraries
-    h2 Active libraries
-    ul: each activeLibrary in activeLibraries
-      if activeLibrary
-        li: a(href=activeLibrary.latest)= activeLibrary.name
-
   // List of all known libraries
   h2 Choose libraries to load
-  form
+  form(action='/box')
     select.chosen-select(name='libraries', multiple, size=15)
       each library in libraries
         option(value=library.name, selected=isActiveLibrary(library, activeLibraries))= library.name
     input(type='submit', value='Load')
-
-  // Load the JavaScript files for all active libraries
-  if activeLibraries
-    each activeLibrary in activeLibraries
-      if activeLibrary
-        script(src=activeLibrary.latest)

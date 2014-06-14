@@ -1,0 +1,16 @@
+extends layout
+
+block dependencies
+  // Load the JavaScript files for all active libraries
+  if activeLibraries
+    each activeLibrary in activeLibraries
+      if activeLibrary
+        script(src=activeLibrary.latest)
+  
+block content
+  // List of active libraries
+  if activeLibraries
+    h2 Active libraries
+    ul: each activeLibrary in activeLibraries
+      if activeLibrary
+        li: a(href=activeLibrary.latest)= activeLibrary.name
