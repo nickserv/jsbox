@@ -24,7 +24,7 @@ block content
     You may use the field below to pick JavaScript libraries to experiment with
     in your new box.
   form(action='/box')
-    select.chosen-select(name='libraries', multiple, size=15)
+    select.chosen-select(name='libraries', multiple)
       each library in libraries
         option(value=library.name, selected=isActiveLibrary(library, activeLibraries))= library.name
     input(type='submit', value='Create a box with these libraries')
