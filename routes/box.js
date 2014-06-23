@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var url = require('url');
 
 var library = require('../library');
 
@@ -12,7 +13,8 @@ router.get('/', function(req, res) {
 
     // TODO: Try to figure out how to define the following local variables and
     // functions elsewhere
-    activeLibraries: library.getActiveLibraries(req.query.libraries)
+    activeLibraries: library.getActiveLibraries(req.query.libraries),
+    queryString: url.parse(req.url).search
   });
 });
 
