@@ -11,7 +11,7 @@ var packagesURL = "http://api.cdnjs.com/libraries";
 // operation on the original cdnjs data.
 exports.getLibraries = function (callback) {
   request(packagesURL, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode === 200) {
       callback(JSON.parse(body).results);
     } else {
       callback([]);
