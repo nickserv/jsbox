@@ -23,8 +23,10 @@ block content
   p.
     You may use the field below to pick JavaScript libraries to experiment with
     in your new box.
-  form(action='/box')
-    select#library-select(name='libraries', placeholder='select some libraries', multiple)
+  form(action='/box').pure-form.pure-form-stacked: fieldset
+    label(for='maininput') Libraries
+    select#library-select(name='libraries', placeholder='choose libraries', multiple)
       each library in libraries
         option(value=library.name, selected=isActiveLibrary(library, activeLibraries))= library.name
-    input.pure-button.pure-button-primary(type='submit', value='Create a box with these libraries')
+    br
+    input.pure-button.pure-button-primary(type='submit', value='Create box')
