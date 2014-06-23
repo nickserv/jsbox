@@ -29,4 +29,6 @@ block content
       each library in libraries
         option(value=library.name, selected=isActiveLibrary(library, activeLibraries))= library.name
     br
-    input.pure-button.pure-button-primary(type='submit', value='Create box')
+    button.pure-button.pure-button-primary(type='submit')
+      span.fa.fa-plus
+      |  Create box

@@ -21,6 +21,10 @@ block content
       if activeLibrary
         li: a(href=activeLibrary.latest)= activeLibrary.name
 
-  a.pure-button.pure-button-primary(href='/' + queryString) Fork this box
+  a.pure-button.pure-button-primary(href='/' + queryString)
+    span.fa.fa-code-fork
+    |  Fork this box
   | 
-  a.pure-button.pure-button-primary(href='/') Create a new box
+  a.pure-button.pure-button-primary(href='/')
+    span.fa.fa-plus
+    |  Create a new box
