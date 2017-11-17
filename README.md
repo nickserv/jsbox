@@ -1,3 +1,6 @@
+# Deprecated
+Use [RunKit + npm](https://npm.runkit.com/).
+
 # [JS Box](http://jsbox.herokuapp.com/)
 [![Dependency Status](https://gemnasium.com/nicolasmccurdy/jsbox.png)](https://gemnasium.com/nicolasmccurdy/jsbox)
 [![Code Climate](https://codeclimate.com/github/nicolasmccurdy/jsbox.png)](https://codeclimate.com/github/nicolasmccurdy/jsbox)
